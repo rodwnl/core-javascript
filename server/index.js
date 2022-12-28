@@ -9,4 +9,4 @@
 
 // liveServer.start(params);
 
-console.log('aaaa');
+console.log(globalThis);
