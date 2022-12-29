@@ -13,7 +13,7 @@
  - [x] Data Types [바로가기](https://github.com/simseonbeom/core-javascript/blob/01.core/client/chapter/core/05.dataType.js)
  - [x] Type Conversion [바로가기](https://github.com/simseonbeom/core-javascript/blob/01.core/client/chapter/core/06.typeConversion.js)
  - [x] Operations (기본 연산자) [바로가기](https://github.com/simseonbeom/core-javascript/blob/01.core/client/chapter/core/07-1.operation.js)
- - [ ] Operations (비교 연산자) [바로가기](https://github.com/simseonbeom/core-javascript/blob/01.core/client/chapter/core/07-2.operation.js)
+ - [x] Operations (비교 연산자) [바로가기](https://github.com/simseonbeom/core-javascript/blob/01.core/client/chapter/core/07-2.operation.js)
  - [ ] Condition (if문과 ?) [바로가기](https://github.com/simseonbeom/core-javascript/blob/01.core/client/chapter/core/08-1.condition.js)
  - [ ] Condition (논리 연산자) [바로가기](https://github.com/simseonbeom/core-javascript/blob/01.core/client/chapter/core/08-2.condition.js)
  - [ ] Condition (switch문) [바로가기](https://github.com/simseonbeom/core-javascript/blob/01.core/client/chapter/core/08-3.condition.js)
