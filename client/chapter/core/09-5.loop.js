@@ -11,6 +11,7 @@ const arrayLike = {
   1: 'head',
   2: 'div',
   length: 3,
+   // [Symbol.iterator](){...}
 }
 
 // for(let value of arrayLike){
@@ -71,6 +72,18 @@ for(let value of languages){
   
   if(value.name === 'Java') continue;
 
+  // console.table(value);
+  
+}
+
+
+
+for(let value of languages){
+  // console.table(value.name);
+  
+  let name = value.name;
+  if(name.includes('C#')) break;
+
   console.table(value);
   
 }
@@ -121,3 +134,23 @@ const randomUser = {
 // - for ~ in 문
 // - for ~ of 문
 // - 성능 비교 진단
+
+/* 
+
+  Object.entries
+  Object.keys
+  Object.values
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
