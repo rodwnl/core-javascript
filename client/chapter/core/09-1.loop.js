@@ -44,7 +44,7 @@ const frontEndDev = [
 // console.log(frontEndDev[5]);
 
 
-let z1 = performance.now();
+
 
 let i = 0;
 
@@ -60,6 +60,11 @@ while(i < frontEndDev.length){
 }
 
 
+
+console.log(i);
+
+
+let z1 = performance.now();
 let z2 = performance.now();
 
 console.log(z2-z1);

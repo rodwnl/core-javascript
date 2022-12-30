@@ -59,9 +59,12 @@ do{
 // do ~ while 문 (순환)
 // - 위 do ~ while 문을 순방향으로 순환되도록 설정
 
+//  블록 스코프 
 
 
 
+
+console.log(x);
 
 
 
