@@ -46,22 +46,6 @@
 
 
 
-<details>
-<summary>코드보기</summary>
-<div markdown="1">
-
-
-  ```js
-
-  for(let value of Object){
-    console.log(value);
-  }
-  ```
-
-</div>
-</details>
-
-
 
 
 
