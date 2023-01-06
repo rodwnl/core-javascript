@@ -6,7 +6,6 @@ body{
   align-items: center;
 } 
 */
-
 h1 {
   margin: 0;
   position: absolute;
@@ -16,8 +15,16 @@ h1 {
   text-align: center;
   /* translate(-50%, -50%) */
 }
-
-
 div{
- 
+
+}
+
+span{
+  display: inline-block;
+  transition:all .5s;
+}
+
+span.is-active{
+  transform: translateY(-300px);
+
 }
