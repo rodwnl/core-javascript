@@ -1,60 +1,17 @@
-/* ---------------------------------------------------------------------- */
-/* DOM traversal                                                          */
-/* ---------------------------------------------------------------------- */
+
+function getNode(node){
+  if(typeof node !== 'string'){
+    throw new Error('getNode 함수의 인자는 문자 타입 이여야 합니다.');
+  }
+
+  return document.querySelector(node)
+}
 
 
-/* 모든 노드에서 사용 */
-// - parentNode
-// - childNodes
-// - firstChild
-// - lastChild
-// - previousSibling
-// - nextSibling
+function getNodes(node){
+  if(typeof node !== 'string'){
+    throw new Error('getNode 함수의 인자는 문자 타입 이여야 합니다.');
+  }
 
-/* 요소 노드에서만 사용 가능 */
-// - parentElement
-// - children
-// - firstElementChild
-// - lastElementChild
-// - previousElementSibling
-// - nextElementSibling
-
-/* 문서 대상 찾기 */
-// - getElementById
-// - getElementsByTagName
-// - getElementsByClassName
-// - querySelector
-// - querySelectorAll
-// - closest
-
-
-// let first = document.querySelector('.first');
-
-let [first,second] = document.querySelectorAll('span');
-
-
-// console.log(second);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 문서 대상 확인 */
-// - matches
-// - contains
-
-
-
-
-
-
+  return document.querySelectorAll(node)
+}
