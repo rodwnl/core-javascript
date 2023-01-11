@@ -32,9 +32,6 @@ const attr = (function(){
   
   }
   
-  
-  
-  
   // const attr = (node,prop,value) => !value ? getAttr(node,prop) : setAttr(node,prop,value);
   
   function attr(node,prop,value){
@@ -46,7 +43,6 @@ const attr = (function(){
     // }
   
     return !value ? getAttr(node,prop) : setAttr(node,prop,value);
-  
   
   }
    
