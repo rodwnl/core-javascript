@@ -22,12 +22,16 @@ import { attr, clearContents, diceAnimation, disableElement, enableElement, getN
 const [rollingDiceButton, recordButton, resetButton] = getNodes('.buttonGroup > button');
 const recordListWrapper = getNode('.recordListWrapper');
 
+
+memo('@tbody',()=>getNode('.recordListWrapper tbody'));
+
+
 let count = 0;
 let total = 0;
 
 function renderRecordListItem(){
-  
-  let diceValue = +attr('#cube', 'data-dice');
+
+  let diceValue = Number(attr(memo('cube'),'data-dice'));
   
   let template= /* html */ `
   <tr>
@@ -74,6 +78,9 @@ const handleRecord =()=>{
 }
 
 const handleReset = () => {
+
+  count = 0;
+  total = 0;
 
   invisibleElement(recordListWrapper);
   clearContents('.recordListWrapper tbody');
