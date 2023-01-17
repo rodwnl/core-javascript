@@ -1,5 +1,5 @@
 /* global gsap */
-
+/*
 import { attr } from "../dom/attr.js";
 import { getNode } from '../dom/getNode.js'
 import { memo } from "../utils/memo.js";
@@ -34,3 +34,4 @@ export function diceAnimation (){
   gsap.to(memo('cube'),{ease:'linear',duration:0.2,z:-100,rotationX:rotationValue[random][0],rotationY:rotationValue[random][1],onComplete:complete})
 
 }
+*/
