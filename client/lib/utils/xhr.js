@@ -1,4 +1,5 @@
 /* readyState 
+import { typeError } from './../error/typeError';
 0: uninitalized //초기화 (선언 안함)
 1: loading //로딩 (오픈만 한 상태)
 2: loaded //로딩완료 (서버에 요청)
@@ -114,33 +115,85 @@ xhrData.delete = (url,body,onSuccess,onFail) =>{
 }
 
 
-/*
-xhrData('POST', 'https://jsonplaceholder.typicode.com/users',
-{
-  "name": "Leanne Graham",
-  "username": "Bret",
-  "email": "Sincere@april.biz",
-  "address": {
-    "street": "Kulas Light",
-    "suite": "Apt. 556",
-    "city": "Gwenborough",
-    "zipcode": "92998-3874",
-    "geo": {
-      "lat": "-37.3159",
-      "lng": "81.1496"
-    }
+// promise API
+
+const defaultOptions={
+  url:'',
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
   },
-  "phone": "1-770-736-8031 x56442",
-  "website": "hildegard.org",
-  "company": {
-    "name": "Romaguera-Crona",
-    "catchPhrase": "Multi-layered client-server neural-net",
-    "bs": "harness real-time e-markets"
-  }
+  body:null
 }
-)
-*/
+
+export function xhrPromise(options={}){
+  const xhr = new XMLHttpRequest();
+
+  // 앞에 빈 객체가 없으면 defaultOptions가 만들어짐
+  const {method, url, body, headers} = Object.assign({},defaultOptions,options);
+
+  if(!url) typeError('서버와 통신할 url 인자는 반드시 필요합니다.');
+
+  xhr.open(method,url);
+  
+  xhr.send(body?JSON.stringify(body):null)
+  
+  return new Promise((resolve, reject) => {
+    xhr.addEventListener('readystatechange',()=>{
+      const {status, readyState, response} = xhr;
+      if(status >= 200 && status < 400){
+         if(readyState === 4){
+           resolve(JSON.parse(response));
+         }
+      }else{
+        reject('에러입니다.');
+      }
+    })
+  })
+}
 
 
+xhrPromise.get = (url) => {
+  return xhrPromise({
+    url
+  })
+}
 
 
+xhrPromise.post = (url,body) => {
+  return xhrPromise({
+    url,
+    body,
+    method:'POST'
+  })
+}
+
+
+xhrPromise.put = (url,body) => {
+  return xhrPromise({
+    url,
+    body,
+    method:'PUT'
+  })
+}
+
+xhrPromise.delete = (url) => {
+  return xhrPromise({
+    url,
+    method:'DELETE'
+  })
+}
+
+//async await
+
+//async를 붙이면 무조건 반환값이 항상 프라미스를 반환. resolve임
+async function delayA(){
+  return '완료'
+}
+
+//await : 1. promise가 반환하는 result를 가져오기 2. 코드 실행 흐름 제어
+
+let result = await delayA()
+
+console.log(result);
